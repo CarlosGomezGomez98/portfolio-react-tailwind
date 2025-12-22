@@ -217,3 +217,7 @@ db.sqlite3
 node_modules/
 dist/
 .DS_Store
+
+frontend/node_modules/
+frontend/dist/
+frontend/.DS_Store
