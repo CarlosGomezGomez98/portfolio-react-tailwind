@@ -126,7 +126,7 @@ export const ContactSection = () => {
                                 <div className="p-4 rounded-2xl gradient-border transition-colors">
                                     <Mail className="text-primary w-6 h-6" />
                                 </div>
-                                <div className="min-w-0 flex-1">
+                                <div className="min-w-0 flex-1 text-left">
                                     <p className="text-xs font-bold tracking-widest text-muted-foreground mb-1">Email</p>
                                     <a href="mailto:carlosgomezgomez1998@gmail.com" className="text-lg font-medium hover:text-primary transition-colors break-all block">
                                         carlosgomezgomez1998@gmail.com
@@ -138,9 +138,9 @@ export const ContactSection = () => {
                                 <div className="p-4 rounded-2xl gradient-border transition-colors">
                                     <Phone className="text-primary w-6 h-6" />
                                 </div>
-                                <div>
-                                    <p className="text-xs font-bold  tracking-widest text-muted-foreground mb-1">Phone</p>
-                                    <a href="tel:+34627304090" className="text-lg font-medium hover:text-primary transition-colors">
+                                <div className="min-w-0 flex-1 text-left">
+                                    <p className="text-xs font-bold tracking-widest text-muted-foreground mb-1">Phone</p>
+                                    <a href="tel:+34627304090" className="text-lg font-medium hover:text-primary transition-colors block">
                                         +34 627 30 40 90
                                     </a>
                                 </div>
@@ -150,8 +150,8 @@ export const ContactSection = () => {
                                 <div className="p-4 rounded-2xl gradient-border transition-colors">
                                     <MapPin className="text-primary w-6 h-6" />
                                 </div>
-                                <div>
-                                    <p className="text-xs font-bold  tracking-widest text-muted-foreground mb-1">Location</p>
+                                <div className="min-w-0 flex-1 text-left">
+                                    <p className="text-xs font-bold tracking-widest text-muted-foreground mb-1">Location</p>
                                     <p className="text-lg font-medium">Barcelona, Spain</p>
                                 </div>
                             </div>
