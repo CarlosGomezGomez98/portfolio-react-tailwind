@@ -36,22 +36,30 @@ export const VideoModal = ({ isOpen, onClose, videoUrl, title }) => {
 
                 {/* Video Container */}
                 <div className="aspect-video bg-black flex items-center justify-center">
-                    {videoUrl ? (
-                        <video 
-                            key={videoUrl}
-                            controls 
-                            autoPlay 
-                            muted
-                            playsInline
-                            className="w-full h-full outline-hidden"
-                        >
-                            <source src={videoUrl} type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    ) : (
+                    {videoUrl ? (() => {
+                        const getYouTubeID = (url) => {
+                            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+                            const match = url.match(regExp);
+                            return (match && match[2].length === 11) ? match[2] : null;
+                        };
+                        const videoId = getYouTubeID(videoUrl);
+                        
+                        return videoId ? (
+                             <iframe
+                                className="w-full h-full"
+                                src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                                title={title}
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                            ></iframe>
+                        ) : (
+                            <div className="text-muted-foreground">Invalid YouTube URL</div>
+                        );
+                    })() : (
                         <div className="text-muted-foreground flex flex-col items-center gap-2">
                             <p>Video not available yet.</p>
-                            <p className="text-xs">Place your mp4 in the public folder.</p>
+                            <p className="text-xs">Provide a YouTube URL in the project data.</p>
                         </div>
                     )}
                 </div>

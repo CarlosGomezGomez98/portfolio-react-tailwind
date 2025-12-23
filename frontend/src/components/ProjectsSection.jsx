@@ -29,7 +29,7 @@ const projects = [
             "MariaDB", "REST API", "Docker", "MQTT", "GitHub",
         ],
         githubUrl: null,
-        videoUrl: "/video/project2.mp4",
+        videoUrl: "https://youtu.be/8_wsleQYRS4",
         isEnterprise: true,
     },
     {   
