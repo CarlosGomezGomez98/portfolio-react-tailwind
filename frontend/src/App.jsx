@@ -3,15 +3,19 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { NotFound } from "./pages/NotFound";
 
+import { ToastProviderWrapper } from "@/hooks/use-toast";
+
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes> 
-    </BrowserRouter>
+    <ToastProviderWrapper>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes> 
+      </BrowserRouter>
+    </ToastProviderWrapper>
   );
 }
 

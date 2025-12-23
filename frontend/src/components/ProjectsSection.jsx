@@ -53,7 +53,7 @@ const ProjectCard = ({ project, onPlayVideo }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     
     return (
-        <div className="group bg-card rounded-xl overflow-hidden shadow-sm border border-border/50 card-hover flex flex-col h-full">
+        <div className="group gradient-border overflow-hidden card-hover flex flex-col h-full">
             <div className="relative h-48 overflow-hidden">
                 <img 
                     src={project.image} 

@@ -18,6 +18,7 @@
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
   --animate-meteor: meteor 5s ease-in-out infinite;
+  --animate-drift: drift 20s linear infinite;
 }
 
 @keyframes float {
@@ -41,6 +42,11 @@
   }
 }
 
+@keyframes fade-in-simple {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 @keyframes meteor {
   0% {
     transform: rotate(215deg) translateX(0);
@@ -55,17 +61,19 @@
   }
 }
 
+@keyframes drift {
+  from { transform: rotate(0deg) translateX(10px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(10px) rotate(-360deg); }
+}
+
 @layer base{
   :root{
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
-
+    --background: 230 40% 98%; /* Slightly cooler indig-ish white */
+    --foreground: 224 71% 4%;
     --card: 0 0% 100%;
-  
-    --primary: 250 47% 60%;
+    --primary: 262 83% 58%; /* More vibrant primary for light mode */
     --primary-foreground: 210 40% 98%;
-
-    --border: 214 32% 91%;
+    --border: 220 13% 91%;
   }
 
   .dark {
@@ -120,15 +128,22 @@
   text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
 }
 
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-primary via-purple-500 to-indigo-600;
+}
+
 @utility card-hover {
-  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+  @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:bg-card/90 hover:border-primary/30;
 }
 
 @utility gradient-border {
-  @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
-  background-clip: padding-box;
-  border: 1px solid transparent;
+  @apply relative rounded-2xl border border-border/50 bg-card/60 backdrop-blur-md transition-all duration-500;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05);
+}
+
+@utility dot-pattern {
+  background-image: radial-gradient(hsl(var(--primary) / 0.1) 1.2px, transparent 1.2px);
+  background-size: 32px 32px;
 }
 
 @utility cosmic-button {
@@ -144,7 +159,13 @@
 
 @utility meteor {
   @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
-  box-shadow: 0 0 10px 5px rgba(255,255,255,0.3)
+  box-shadow: 0 0 10px 5px rgba(255,255,255,0.3);
+}
+
+@utility light-meteor {
+  @apply absolute bg-linear-to-r from-primary via-indigo-500 to-transparent rounded-full;
+  box-shadow: 0 0 20px 2px hsl(var(--primary) / 0.2);
+  filter: blur(1px);
 }
 
 #root {
