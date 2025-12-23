@@ -127,7 +127,7 @@ export const ContactSection = () => {
                                     <Mail className="text-primary w-6 h-6" />
                                 </div>
                                 <div>
-                                    <p className="text-xs font-bold  tracking-widest text-muted-foreground mb-1">Email</p>
+                                    <p className="text-xs font-bold overflow-x-auto whitespace-nowrap  tracking-widest text-muted-foreground mb-1">Email</p>
                                     <a href="mailto:carlosgomezgomez1998@gmail.com" className="text-lg font-medium hover:text-primary transition-colors">
                                         carlosgomezgomez1998@gmail.com
                                     </a>
