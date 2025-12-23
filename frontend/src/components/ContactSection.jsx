@@ -126,9 +126,9 @@ export const ContactSection = () => {
                                 <div className="p-4 rounded-2xl gradient-border transition-colors">
                                     <Mail className="text-primary w-6 h-6" />
                                 </div>
-                                <div>
-                                    <p className="text-xs font-bold overflow-x-auto whitespace-nowrap  tracking-widest text-muted-foreground mb-1">Email</p>
-                                    <a href="mailto:carlosgomezgomez1998@gmail.com" className="text-lg font-medium hover:text-primary transition-colors">
+                                <div className="min-w-0 flex-1">
+                                    <p className="text-xs font-bold tracking-widest text-muted-foreground mb-1">Email</p>
+                                    <a href="mailto:carlosgomezgomez1998@gmail.com" className="text-lg font-medium hover:text-primary transition-colors break-all block">
                                         carlosgomezgomez1998@gmail.com
                                     </a>
                                 </div>
