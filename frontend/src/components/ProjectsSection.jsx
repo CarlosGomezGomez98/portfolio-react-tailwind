@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ExternalLink, Github, Play, ArrowRight } from "lucide-react";
-import { VideoModal } from "./VideoModal";
+import { VideoModal } from "@/components/VideoModal";
 
 const projects = [
     {
