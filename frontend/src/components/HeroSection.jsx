@@ -12,11 +12,12 @@ export const HeroSection = () => {
                         <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2">{" "}Gómez</span>
                     </h1>
                     <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-                        Desarrollador web con experiencia en el desarrollo de aplicaciones web y móviles.
+                        Full Stack & IoT Engineer dedicated to building end-to-end solutions that bridge the gap between hardware and software.
+                        Specialized in scalable web apps, real-time IoT monitoring, and data analytics. 
                     </p>
                     <div className="opacity-0 animate-fade-in-delay-4">
                         <a href='#projects' className="cosmic-button">
-                            Ver mi trabajo
+                            See my work
                         </a>
                     </div>
                 </div>

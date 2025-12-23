@@ -1,6 +1,6 @@
 
 import { cn } from "@/lib/utils";
-import { Code, User, Briefcase } from "lucide-react";
+import { Code, Database, Briefcase } from "lucide-react";
 
 export const AboutSection = () => {
     return <section id="about" className="py-24 px-4 relative"> 
@@ -16,12 +16,14 @@ export const AboutSection = () => {
                 <h3 className="text-2xl font-bold"> Passionate Web Developer & Tech Creator</h3>
 
                 <p className="text-muted-foreground">
-                    With a strong background in web development and a deep love for technology, I am dedicated to creating innovative and user-friendly solutions.
-                    My journey in the tech industry has been both challenging and rewarding, and I am committed to pushing the boundaries of what is possible.
+                    I am a Full Stack & IoT Engineer specialized in creating seamless connections between devices, data, and users. 
+                    With a strong background in LoRaWAN/Sigfox networks and a recently completed M.Sc. in Big Data Management, 
+                    I build robust architectures that transform complex sensor data into strategic business intelligence.
                 </p>
 
                 <p className="text-muted-foreground">
-                    I am always eager to learn new technologies and explore new ideas, and I am excited to continue my journey in the tech industry.
+                    Throughout my career at companies like Cellnex Telecom and MODI S.L. I have led the development of energy efficiency platforms and smart monitoring solutions, 
+                    integrating secure backends with high-performance, user-centered interfaces.                
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -33,7 +35,7 @@ export const AboutSection = () => {
                         "px-6 py-2 rounded-full border border-primary text-primary",
                         "hover:bg-primary/10 transition-colors duration-300"
                         )}>
-                        {" "}Descargar CV
+                        {" "}Download CV
                     </a>
                 </div>
             </div>
@@ -46,7 +48,7 @@ export const AboutSection = () => {
                         <div className="text-left">
                             <h4 className="font-semibold text-lg"> Web Development </h4>
                             <p className="text-muted-foreground">
-                                Creating responsive and user-friendly websites using the latest web technologies.
+                                Developing responsive web applications using Python, JavaScript, and SQL. I focus on building efficient backends and user-friendly interfaces.
                             </p>
                         </div>
                     </div>
@@ -54,12 +56,12 @@ export const AboutSection = () => {
                 <div className="gradient-border p-6 card-hover">
                     <div className="flex items-start gap-4">
                         <div className="p-3 rounded-full bg-primary/10">
-                            <User className="h-6 w-6 text-primary"/>
+                            <Database className="h-6 w-6 text-primary"/>
                         </div>
                         <div className="text-left">
-                            <h4 className="font-semibold text-lg"> User Experience </h4>
+                            <h4 className="font-semibold text-lg"> Data Engineering & Analytics </h4>
                             <p className="text-muted-foreground">
-                                Ensuring that websites are easy to use and provide a positive user experience.
+                                Specialized in creating ETL pipelines and real-time dashboards to transform raw data into actionable insights.
                             </p>
                         </div>
                     </div>
