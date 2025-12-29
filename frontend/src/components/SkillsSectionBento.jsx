@@ -54,10 +54,12 @@ export const SkillsSectionBento = () => {
                 </div>
 
                 {/* Bento Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[180px]">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-4 auto-rows-[180px]">
                     {filteredSkills.map((skill, index) => {
                         const isExpanded = expandedCards[index];
-                        const isWide = skill.className?.includes("md:col-span-2") || skill.className?.includes("md:row-span-2");
+                        const isWideOnDesktop = skill.className?.includes("md:col-span-2");
+                        const isHighOnDesktop = skill.className?.includes("md:row-span-2");
+                        const isWide = isWideOnDesktop || isHighOnDesktop;
 
                         return (
                             <div
@@ -65,6 +67,9 @@ export const SkillsSectionBento = () => {
                                 onClick={() => toggleExpand(index)}
                                 className={cn(
                                     "group relative rounded-2xl transition-all duration-500 cursor-pointer overflow-hidden gradient-border card-hover",
+                                    // Si es ancho en escritorio, le damos 2 filas en móvil para más espacio
+                                    isWideOnDesktop && "row-span-2 md:row-span-1",
+                                    // Si ya tiene clases de span, las respetamos
                                     skill.className,
                                     isExpanded ? "ring-2 ring-primary/20 shadow-xl" : ""
                                 )}
@@ -109,11 +114,14 @@ export const SkillsSectionBento = () => {
                                     <div className={cn(
                                         "transition-all duration-500 text-left w-full overflow-hidden",
                                         isExpanded
-                                            ? "opacity-100 max-h-[120px] translate-y-0 pb-2"
+                                            ? "opacity-100 max-h-[200px] translate-y-0 pb-2"
                                             : "opacity-0 max-h-0 translate-y-4"
                                     )}>
                                         {isWide && (
-                                            <p className="text-[11px] leading-relaxed text-muted-foreground mb-2 line-clamp-1">
+                                            <p className={cn(
+                                                "text-[11px] leading-relaxed text-muted-foreground mb-2",
+                                                !isHighOnDesktop ? "line-clamp-none md:line-clamp-1" : "line-clamp-none"
+                                            )}>
                                                 {skill.description}
                                             </p>
                                         )}
