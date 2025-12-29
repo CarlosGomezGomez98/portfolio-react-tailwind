@@ -8,7 +8,13 @@ A modern, high-performance personal portfolio built with **React 19**, **Vite**,
 ![Lucide](https://img.shields.io/badge/Lucide-F7B93E?style=for-the-badge&logo=lucide&logoColor=white)
 
 ## Features
+## Features
 
+- ** Performance-Driven**: Built using Vite for ultra-fast development and optimized production builds.
+- ** Immersive UI**: Features a dynamic **Star Background** for a premium aesthetic.
+- ** Fully Responsive**: Seamless experience across mobile, tablet, and desktop devices.
+- ** Dark/Light Mode**: Integrated theme toggle for user preference.
+- ** Portfolio Showcase**:
 - ** Performance-Driven**: Built using Vite for ultra-fast development and optimized production builds.
 - ** Immersive UI**: Features a dynamic **Star Background** for a premium aesthetic.
 - ** Fully Responsive**: Seamless experience across mobile, tablet, and desktop devices.
@@ -18,8 +24,10 @@ A modern, high-performance personal portfolio built with **React 19**, **Vite**,
   - **Video Modals** for project demonstrations.
   - **Skills Section** highlighting core competencies.
 - ** Contact Integration**: 
+- ** Contact Integration**: 
   - Functional contact form with validation.
   - Real-time feedback using **Radix UI Toasts**.
+- ** Smooth Navigation**: SPA routing powered by `react-router-dom`.
 - ** Smooth Navigation**: SPA routing powered by `react-router-dom`.
 
 ## Tech Stack
@@ -66,6 +74,7 @@ To get a local copy up and running, follow these simple steps.
 The application will be running at `http://localhost:5173`.
 
 ##  Project Structure
+##  Project Structure
 
 ```text
 /
@@ -82,6 +91,7 @@ The application will be running at `http://localhost:5173`.
 └── LICENSE              # Project license
 ```
 
+##  License
 ##  License
 
 Distributed under the MIT License. See `LICENSE` for more information.
