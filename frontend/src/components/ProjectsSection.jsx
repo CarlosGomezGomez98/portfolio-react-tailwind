@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, Github, Play, ArrowRight } from "lucide-react";
+import { ExternalLink, Github, Play, ArrowRight, Plus } from "lucide-react";
 import { VideoModal } from "@/components/VideoModal";
 
 const projects = [
@@ -32,8 +32,8 @@ const projects = [
         videoUrl: "https://youtu.be/8_wsleQYRS4",
         isEnterprise: true,
     },
-    {   
-        id: 3,  
+    {
+        id: 3,
         title: "Integrated Energy & Environmental Monitoring System",
         description: `Developed a comprehensive real-time monitoring platform for building energy management. 
                       The system tracks photovoltaic generation, electric vehicle (EV) charging stations, 
@@ -51,14 +51,14 @@ const projects = [
 
 const ProjectCard = ({ project, onPlayVideo }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-    
+
     return (
         <div className="group gradient-border overflow-hidden card-hover flex flex-col h-full">
             <div className="relative h-48 overflow-hidden">
-                <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {project.isEnterprise && (
                     <div className="absolute top-3 right-3">
@@ -72,24 +72,24 @@ const ProjectCard = ({ project, onPlayVideo }) => {
                 <div className="mb-4 min-h-[60px]">
                     <div className="flex flex-wrap gap-2">
                         {(isExpanded ? project.tags : project.tags.slice(0, 6)).map((tag, index) => (
-                            <span 
-                                key={index} 
-                                className="px-2 py-1 text-[11px] font-medium border rounded-full bg-secondary/70 text-secondary-foreground transition-all"
+                            <span
+                                key={index}
+                                className="tech-tag"
                             >
                                 {tag}
                             </span>
                         ))}
                         {!isExpanded && project.tags.length > 6 && (
-                            <button 
+                            <button
                                 onClick={() => setIsExpanded(true)}
-                                className="px-2 py-1 text-xs font-bold text-secondary hover:text-primary transition-colors cursor-pointer"
+                                className="w-5 h-5 rounded-full bg-secondary/40 text-muted-foreground hover:bg-primary/20 hover:text-primary flex items-center justify-center transition-all cursor-pointer"
                                 title="Show more tags"
                             >
-                                ...
+                                <Plus size={10} />
                             </button>
                         )}
                         {isExpanded && (
-                            <button 
+                            <button
                                 onClick={() => setIsExpanded(false)}
                                 className="px-2 py-1 text-[11px] font-bold text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                             >
@@ -98,7 +98,7 @@ const ProjectCard = ({ project, onPlayVideo }) => {
                         )}
                     </div>
                 </div>
-            
+
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                     {project.title}
                 </h3>
@@ -155,35 +155,35 @@ export const ProjectsSection = () => {
                 </h2>
 
                 <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto text-lg">
-                    A selection of my most significant work, ranging from data-driven insights to full-stack IoT solutions. 
+                    A selection of my most significant work, ranging from data-driven insights to full-stack IoT solutions.
                     These projects demonstrate my ability to bridge the gap between complex data analysis and practical, scalable applications.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
-                        <ProjectCard 
-                            key={index} 
-                            project={project} 
+                        <ProjectCard
+                            key={index}
+                            project={project}
                             onPlayVideo={(proj) => setSelectedProject(proj)}
                         />
                     ))}
                 </div>
 
                 <div className="text-center mt-12">
-                    <a 
-                        className="cosmic-button w-fit flex items-center mx-auto" 
+                    <a
+                        className="cosmic-button w-fit flex items-center mx-auto"
                         href="https://github.com/CarlosGomezGomez98"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Check My GitHub 
+                        Check My GitHub
                         <ArrowRight size={16} className="ml-2" />
                     </a>
                 </div>
             </div>
 
-            <VideoModal 
-                isOpen={!!selectedProject} 
+            <VideoModal
+                isOpen={!!selectedProject}
                 onClose={() => setSelectedProject(null)}
                 videoUrl={selectedProject?.videoUrl}
                 title={selectedProject?.title}

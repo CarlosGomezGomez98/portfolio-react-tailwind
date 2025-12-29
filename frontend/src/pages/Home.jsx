@@ -4,31 +4,31 @@ import { StarBackground } from "@/components/StarBackground";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
-import { SkillsSection } from "@/components/SkillsSection";
+import { SkillsSectionBento } from "@/components/SkillsSectionBento";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { FooterSection } from "@/components/FooterSection";
 
 export const Home = () => {
     return <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-    
-    { /* Theme Toggle */ }
+
+        { /* Theme Toggle */}
         <ThemeToggle />
-    { /* Background Effects */ }
+        { /* Background Effects */}
         <StarBackground />
 
-    { /* Navbar */ }
+        { /* Navbar */}
         <Navbar />
-    { /* Main Content */ }
+        { /* Main Content */}
 
-    <main>
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ContactSection />
-    </main>
-    { /* Footer */ }
+        <main>
+            <HeroSection />
+            <AboutSection />
+            <SkillsSectionBento />
+            <ProjectsSection />
+            <ContactSection />
+        </main>
+        { /* Footer */}
         <FooterSection />
-    </div>    
+    </div>
 };
