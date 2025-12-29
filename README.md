@@ -1,96 +1,91 @@
-# Portfolio-django
-Portfolio personal hecho en django
-🚀 Mi Portfolio Personal (Django + React)
-Este es mi proyecto de portfolio personal donde demuestro mis habilidades de desarrollo Full Stack. El sistema utiliza Django REST Framework para la gestión de datos y React (Vite) para una interfaz de usuario dinámica.
+# Professional Portfolio
 
-🛠️ Requisitos Previos
-Antes de empezar, asegúrate de tener instalado:
+A modern, high-performance personal portfolio built with **React 19**, **Vite**, and **Tailwind CSS 4**. This project showcases my skills, experience, and projects with a sleek, interactive design.
 
-Python 3.x
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Lucide](https://img.shields.io/badge/Lucide-F7B93E?style=for-the-badge&logo=lucide&logoColor=white)
 
-Node.js (versión LTS recomendada)
+## ✨ Features
 
-Git
+- **🚀 Performance-Driven**: Built using Vite for ultra-fast development and optimized production builds.
+- **🌌 Immersive UI**: Features a dynamic **Star Background** for a premium aesthetic.
+- **📱 Fully Responsive**: Seamless experience across mobile, tablet, and desktop devices.
+- **🌗 Dark/Light Mode**: Integrated theme toggle for user preference.
+- **📂 Portfolio Showcase**:
+  - Interactive **Projects Section** with detailed descriptions.
+  - **Video Modals** for project demonstrations.
+  - **Skills Section** highlighting core competencies.
+- **✉️ Contact Integration**: 
+  - Functional contact form with validation.
+  - Real-time feedback using **Radix UI Toasts**.
+- **🧭 Smooth Navigation**: SPA routing powered by `react-router-dom`.
 
-📥 Configuración en una Máquina Nueva
-Si acabas de clonar el repositorio por primera vez, sigue estos pasos:
+## 🛠️ Tech Stack
 
-## 1. Clonar el proyecto
+- **Core**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite 7](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Components**: [Radix UI](https://www.radix-ui.com/)
+- **Utilities**: `clsx`, `tailwind-merge`, `class-variance-authority`
 
-```bash
-git clone https://github.com/TU_USUARIO/TU_REPO.git
-cd mi-portfolio
+## 🚀 Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+- **Node.js**: (Version 18 or higher recommended)
+- **npm**: (Included with Node.js)
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/portfolio-react-tailwind.git
+   ```
+
+2. **Navigate to the project directory**:
+   ```bash
+   cd portfolio-react-tailwind
+   ```
+
+3. **Install dependencies**:
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+4. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+The application will be running at `http://localhost:5173`.
+
+## 📁 Project Structure
+
+```text
+/
+├── frontend/
+│   ├── src/
+│   │   ├── components/  # Reusable UI components (Hero, Skills, Contact, etc.)
+│   │   ├── pages/       # Main page layouts (Home, About, NotFound)
+│   │   ├── hooks/       # Custom React hooks (Toasts, etc.)
+│   │   ├── assets/      # Images and static assets
+│   │   ├── App.jsx      # Main application router
+│   │   └── index.css    # Global styles and Tailwind configuration
+│   ├── public/          # Public assets
+│   └── vite.config.js   # Vite configuration
+└── LICENSE              # Project license
 ```
-## 2. Configuración del Backend (Django)
-Entra en la carpeta del servidor e instala las dependencias:
-```Bash
-cd backend
 
-# Crear entorno virtual
-python -m venv venv
+## 📄 License
 
-# Activar entorno virtual
-# En Windows:
-venv\Scripts\activate
+Distributed under the MIT License. See `LICENSE` for more information.
 
-# En Mac/Linux:
-source venv/bin/activate
+---
 
-# Instalar dependencias
-pip install django djangorestframework django-cors-headers
-
-# Realizar migraciones de base de datos
-python manage.py migrate
-```
-##  3. Configuración del Frontend (React)
-Abre una nueva terminal (sin cerrar la anterior) y configura la interfaz:
-
-```Bash
-cd frontend
-npm install
-```
-## 💻 Flujo de Desarrollo Diario
-Para trabajar en el proyecto cada día, sigue este orden:
-
-- **Paso 1**: Levantar el Backend
-```bash
-
-cd backend
-# Activar venv si no está activo
-python manage.py runserver
-```
-El servidor estará en: http://127.0.0.1:8000/
-
-- **Paso 2**: Levantar el Frontend
-```Bash
-
-cd frontend
-npm run dev
-```
-La web estará en: http://localhost:5173/ (o la URL que indique Vite).
-
-## 🔄 Sincronización con GitHub
-Cuando termines de trabajar en un PC y quieras continuar en otro, no olvides subir tus cambios:
-
-En la PC actual (subir cambios):
-
-```Bash
-
-git add .
-git commit -m "Explica brevemente qué has hecho"
-git push origin main
-```
-
-En la otra PC (bajar cambios):
-
-```Bash
-# Antes de empezar a programar siempre haz un pull
-git pull origin main
-```
-## 📂 Estructura del Directorio
-
-backend/: Lógica de Python, modelos de base de datos y API.
-
-frontend/: Código fuente de React, componentes y estilos.
-
-.gitignore: Archivos excluidos de Git (como entornos virtuales y node_modules).
+Built with ❤️ by Carlos
