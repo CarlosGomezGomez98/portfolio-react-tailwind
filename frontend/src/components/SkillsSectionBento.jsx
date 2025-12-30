@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils.js";
-import { Monitor, Server, Wrench, Layout, Plus, Minus } from "lucide-react";
+import { Monitor, Server, Wrench, Layout, Plus, Minus, Cpu } from "lucide-react";
 import { skills } from "./skills";
 
 const currentYear = new Date().getFullYear();
@@ -10,6 +10,7 @@ const categories = [
     { id: "frontend", label: "Frontend", icon: Monitor },
     { id: "backend", label: "Backend", icon: Server },
     { id: "tools", label: "Tools", icon: Wrench },
+    { id: "iot", label: "IoT", icon: Cpu },
 ];
 
 export const SkillsSectionBento = () => {
@@ -23,9 +24,13 @@ export const SkillsSectionBento = () => {
         }));
     };
 
-    const filteredSkills = skills.filter(
-        skill => skill.category === activeCategory || activeCategory === "all"
-    );
+    const filteredSkills = skills.filter(skill => {
+        if (activeCategory === "all") return true;
+        if (Array.isArray(skill.category)) {
+            return skill.category.includes(activeCategory);
+        }
+        return skill.category === activeCategory;
+    });
 
     return (
         <section id="skills" className="py-24 px-4 relative overflow-hidden">
@@ -41,7 +46,7 @@ export const SkillsSectionBento = () => {
                             key={cat.id}
                             onClick={() => setActiveCategory(cat.id)}
                             className={cn(
-                                "flex items-center gap-2 px-6 py-2.5 rounded-full border transition-all duration-300",
+                                "flex items-center gap-2 px-6 py-2.5 rounded-full border transition-all duration-300 cursor-pointer",
                                 activeCategory === cat.id
                                     ? "bg-primary border-primary text-primary-foreground shadow-lg shadow-primary/20 scale-105"
                                     : "bg-background border-border text-muted-foreground hover:border-primary/50"
@@ -54,7 +59,7 @@ export const SkillsSectionBento = () => {
                 </div>
 
                 {/* Bento Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-4 auto-rows-[180px]">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[180px]">
                     {filteredSkills.map((skill, index) => {
                         const isExpanded = expandedCards[index];
                         const isWideOnDesktop = skill.className?.includes("md:col-span-2");
