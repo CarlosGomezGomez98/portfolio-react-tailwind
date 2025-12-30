@@ -6,7 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 export const ContactSection = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const { toast } = useToast();
-    
+
     // Protection states
     const [mathQuestion, setMathQuestion] = useState({ a: 0, b: 0, result: 0 });
     const [userAnswer, setUserAnswer] = useState("");
@@ -26,7 +26,7 @@ export const ContactSection = () => {
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        
+
         // 1. Time-based protection (Bots submit too fast)
         const timeElapsed = Date.now() - loadTime;
         if (timeElapsed < 4000) {
@@ -52,7 +52,7 @@ export const ContactSection = () => {
         // 3. Local Rate Limiting (1 per hour)
         const lastSubmission = localStorage.getItem("last_contact_submission");
         const oneHour = 60 * 60 * 1000;
-        
+
         if (lastSubmission && (Date.now() - lastSubmission < oneHour)) {
             const minutesLeft = Math.ceil((oneHour - (Date.now() - lastSubmission)) / (1000 * 60));
             toast({
@@ -64,7 +64,7 @@ export const ContactSection = () => {
         }
 
         setIsSubmitting(true);
-        
+
         const formData = new FormData(event.target);
         formData.append("access_key", "f3fdbc4f-4db3-450f-b02d-2ebfde7be1b5");
 
@@ -103,7 +103,7 @@ export const ContactSection = () => {
     };
 
     return (
-        <section id="contact" className="py-24 px-4 relative bg-secondary/30">
+        <section id="contact" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-5xl">
                 <h2 className="text-4xl font-bold text-center mb-12">
                     Get in <span className="text-primary">touch</span>
@@ -174,7 +174,7 @@ export const ContactSection = () => {
                         <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
                             Send a Message
                         </h3>
-                        
+
                         <form onSubmit={onSubmit} className="space-y-5">
                             <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
@@ -196,16 +196,16 @@ export const ContactSection = () => {
                                 <label className="block text-sm font-medium mb-2 text-muted-foreground">
                                     Security Check: What is {mathQuestion.a} + {mathQuestion.b}?
                                 </label>
-                                <input 
-                                    type="number" 
+                                <input
+                                    type="number"
                                     value={userAnswer}
                                     onChange={(e) => setUserAnswer(e.target.value)}
-                                    required 
+                                    required
                                     className="w-full px-4 py-2 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary outline-none transition-all"
                                     placeholder="Answer"
                                 />
                             </div>
-                            
+
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
